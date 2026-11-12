@@ -1,0 +1,22 @@
+id,type,level,team_i,team_j,round,stakeholder,description
+W01,C,1,CLU,CER,all,Physical,Club Brugge and Cercle Brugge share the Jan Breydel stadium so they cannot both host
+W02,B,1,GNT,,5,Physical,Gent's stadium is booked for a concert in round 5
+W03,C,2,AND,USG,all,Police,Brussels police cannot cover two home matches in Brussels on the same weekend
+W04,D,2,CLU,AND,1,Police,High-risk match Club Brugge vs Anderlecht must not be in the opening round
+W05,D,2,STA,AND,4,Police,High-risk match Standard vs Anderlecht must not be in round 4 (city event in Liege)
+W06,B,2,ANT,,7,Local government,Antwerp marathon: Antwerp cannot host in round 7
+W07,E,3,,,all,Broadcaster,At most one match between two top teams per round
+W08,A,3,ANT,,1,Club,Antwerp wants to open the season at home
+W09,A,3,CLU,,2,Club,Club Brugge wants a home game in round 2 (club anniversary)
+W10,A,3,CER,,2,Club,Cercle Brugge wants a home game in round 2 (club anniversary)
+W11,A,3,CLU,,14,Club,Club Brugge wants the final round at home
+W12,A,4,GNT,,5,Club,Gent wants a home game in round 5
+W13,A,4,AND,,6,Club,Anderlecht wants a home game in round 6
+W14,A,5,USG,,6,Club,Union wants a home game in round 6
+W15,A,4,STA,,3,Club,Standard wants a home game on the first Liege festival weekend (round 3)
+W16,A,4,STA,,10,Club,Standard wants a home game on the second Liege festival weekend (round 10)
+W17,A,4,GNK,,14,Club,Genk wants the final round at home
+W18,B,5,GNK,,8,Club,Genk prefers to play away in round 8 (pitch renovation)
+W19,B,4,CER,,12,Club,Cercle Brugge prefers to play away in round 12
+W20,A,5,ANT,,9,Club,Antwerp prefers a home game in round 9
+W21,D,3,CLU,CER,14,Broadcaster,The Bruges derby should not be in the final round

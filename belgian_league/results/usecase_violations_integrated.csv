@@ -1,0 +1,5 @@
+id,rule,type,level,i,j,r,stakeholder,amount,penalty,description
+W10,W10,A,3,CER,,2,Club,1,20.0,Cercle Brugge wants a home game in round 2 (club anniversary)
+W12,W12,A,4,GNT,,5,Club,1,4.0,Gent wants a home game in round 5
+W14,W14,A,5,USG,,6,Club,1,1.0,Union wants a home game in round 6
+W16,W16,A,4,STA,,10,Club,1,4.0,Standard wants a home game on the second Liege festival weekend (round 10)

@@ -1,0 +1,6 @@
+level,penalty,meaning
+1,15000,Physical impossibility (stadium sharing or unavailable)
+2,500,Police or local government
+3,20,High-priority club or broadcaster wish
+4,4,Medium-priority wish
+5,1,Low-priority wish

@@ -1,0 +1,61 @@
+id,type,level,team_i,team_j,round,stakeholder,description,conflict_group
+R001,C,5,CLU,GNT,14,Police,CLU and GNT should not both host in round 14,
+R002,E,4,,,3,Broadcaster,at most one top match in round 3,
+R003,A,4,USG,,10,Club,USG wants to play at home in round 10,
+R004,B,3,GNT,,14,Club,GNT wants to play away in round 14,
+R005,A,4,AND,,8,Club,AND wants to play at home in round 8,
+R006,A,5,USG,,4,Club,USG wants home in round 4,G01-contradiction
+R007,B,3,USG,,4,Local government,USG cannot host in round 4 (city event),G01-contradiction
+R008,A,4,USG,,6,Club,USG wants home in round 6,G02-mirror
+R009,A,3,USG,,13,Club,USG wants home in round 13,G02-mirror
+R010,A,5,STA,,7,Club,STA wants to play at home in round 7,
+R011,A,3,AND,,2,Club,AND wants home in round 2,G03-three_in_row
+R012,A,5,AND,,3,Club,AND wants home in round 3,G03-three_in_row
+R013,A,4,AND,,4,Club,AND wants home in round 4,G03-three_in_row
+R014,C,2,STA,USG,6,Police,STA and USG should not both host in round 6,
+R015,A,4,CLU,,3,Club,CLU wants to play at home in round 3,
+R016,A,5,GNT,,14,Club,GNT wants to play at home in round 14,
+R017,B,4,CLU,,14,Club,CLU wants to play away in round 14,
+R018,A,5,USG,,4,Club,USG wants home in round 4,G04-three_in_row
+R019,A,5,USG,,5,Club,USG wants home in round 5,G04-three_in_row
+R020,A,3,USG,,6,Club,USG wants home in round 6,G04-three_in_row
+R021,A,5,ANT,,5,Club,ANT wants home in round 5,G05-mirror
+R022,A,5,ANT,,12,Club,ANT wants home in round 12,G05-mirror
+R023,A,5,USG,,2,Club,USG wants to play at home in round 2,
+R024,B,3,CER,,5,Club,CER wants to play away in round 5,
+R025,A,5,AND,,11,Club,AND wants to play at home in round 11,
+R026,E,3,,,1,Broadcaster,at most one top match in round 1,
+R027,B,3,GNK,,10,Club,GNK wants to play away in round 10,
+R028,A,2,AND,,11,Club,AND wants home in round 11,G06-neighbours
+R029,A,4,CLU,,11,Club,CLU wants home in round 11,G06-neighbours
+R030,C,5,AND,CLU,11,Police,AND and CLU should not both host in round 11,G06-neighbours
+R031,A,4,GNT,,3,Club,GNT wants home in round 3,G07-three_in_row
+R032,A,3,GNT,,4,Club,GNT wants home in round 4,G07-three_in_row
+R033,A,5,GNT,,5,Club,GNT wants home in round 5,G07-three_in_row
+R034,A,5,AND,,8,Club,AND wants home in round 8,G08-neighbours
+R035,A,5,STA,,8,Club,STA wants home in round 8,G08-neighbours
+R036,C,3,AND,STA,8,Police,AND and STA should not both host in round 8,G08-neighbours
+R037,A,4,GNT,,2,Club,GNT wants home in round 2,G09-neighbours
+R038,A,5,CER,,2,Club,CER wants home in round 2,G09-neighbours
+R039,C,5,GNT,CER,2,Police,GNT and CER should not both host in round 2,G09-neighbours
+R040,B,3,ANT,,2,Club,ANT wants to play away in round 2,
+R041,B,4,GNK,,2,Club,GNK wants to play away in round 2,
+R042,A,3,STA,,9,Club,STA wants to play at home in round 9,
+R043,D,5,GNK,ANT,5,Police,GNK and ANT should not meet in round 5,
+R044,A,3,ANT,,13,Club,ANT wants home in round 13,G10-contradiction
+R045,B,5,ANT,,13,Local government,ANT cannot host in round 13 (city event),G10-contradiction
+R046,D,4,GNK,AND,13,Police,GNK and AND should not meet in round 13,
+R047,A,3,GNT,,7,Club,GNT wants home in round 7,G11-mirror
+R048,A,5,GNT,,14,Club,GNT wants home in round 14,G11-mirror
+R049,B,3,AND,,3,Club,AND wants to play away in round 3,
+R050,E,4,,,12,Broadcaster,at most one top match in round 12,
+R051,B,4,GNT,,10,Club,GNT wants to play away in round 10,
+R052,D,4,CLU,CER,12,Police,CLU and CER should not meet in round 12,
+R053,A,5,AND,,13,Club,AND wants home in round 13,G12-neighbours
+R054,A,4,CER,,13,Club,CER wants home in round 13,G12-neighbours
+R055,C,2,AND,CER,13,Police,AND and CER should not both host in round 13,G12-neighbours
+R056,A,2,CER,,3,Club,CER wants to play at home in round 3,
+R057,B,4,ANT,,7,Club,ANT wants to play away in round 7,
+R058,A,5,USG,,12,Club,USG wants home in round 12,G13-contradiction
+R059,B,2,USG,,12,Local government,USG cannot host in round 12 (city event),G13-contradiction
+R060,A,4,GNK,,2,Club,GNK wants to play at home in round 2,

@@ -1,0 +1,41 @@
+id,type,level,team_i,team_j,round,stakeholder,description,conflict_group
+R001,D,4,ANT,GNT,4,Police,ANT and GNT should not meet in round 4,
+R002,C,5,ANT,AND,1,Police,ANT and AND should not both host in round 1,
+R003,A,3,CLU,,7,Club,CLU wants home in round 7,G01-mirror
+R004,A,4,CLU,,14,Club,CLU wants home in round 14,G01-mirror
+R005,E,3,,,3,Broadcaster,at most one top match in round 3,
+R006,A,4,USG,,10,Club,USG wants home in round 10,G02-neighbours
+R007,A,4,ANT,,10,Club,ANT wants home in round 10,G02-neighbours
+R008,C,3,USG,ANT,10,Police,USG and ANT should not both host in round 10,G02-neighbours
+R009,A,3,GNK,,2,Club,GNK wants home in round 2,G03-mirror
+R010,A,4,GNK,,9,Club,GNK wants home in round 9,G03-mirror
+R011,A,4,AND,,14,Club,AND wants to play at home in round 14,
+R012,A,4,USG,,1,Club,USG wants home in round 1,G04-neighbours
+R013,A,5,CLU,,1,Club,CLU wants home in round 1,G04-neighbours
+R014,C,5,USG,CLU,1,Police,USG and CLU should not both host in round 1,G04-neighbours
+R015,E,3,,,10,Broadcaster,at most one top match in round 10,
+R016,A,3,ANT,,13,Club,ANT wants home in round 13,G05-contradiction
+R017,B,3,ANT,,13,Local government,ANT cannot host in round 13 (city event),G05-contradiction
+R018,D,5,AND,GNT,3,Police,AND and GNT should not meet in round 3,
+R019,A,4,STA,,11,Club,STA wants home in round 11,G06-neighbours
+R020,A,5,CER,,11,Club,CER wants home in round 11,G06-neighbours
+R021,C,5,STA,CER,11,Police,STA and CER should not both host in round 11,G06-neighbours
+R022,D,4,CLU,AND,1,Police,CLU and AND should not meet in round 1,
+R023,C,3,AND,USG,7,Police,AND and USG should not both host in round 7,
+R024,D,5,STA,ANT,12,Police,STA and ANT should not meet in round 12,
+R025,D,3,ANT,USG,11,Police,ANT and USG should not meet in round 11,
+R026,A,3,GNT,,6,Club,GNT wants home in round 6,G07-mirror
+R027,A,4,GNT,,13,Club,GNT wants home in round 13,G07-mirror
+R028,D,2,ANT,STA,1,Police,ANT and STA should not meet in round 1,
+R029,A,4,CER,,1,Club,CER wants home in round 1,G08-mirror
+R030,A,5,CER,,8,Club,CER wants home in round 8,G08-mirror
+R031,A,5,ANT,,13,Club,ANT wants to play at home in round 13,
+R032,E,5,,,7,Broadcaster,at most one top match in round 7,
+R033,D,5,CLU,GNK,6,Police,CLU and GNK should not meet in round 6,
+R034,A,5,CLU,,2,Club,CLU wants home in round 2,G09-neighbours
+R035,A,4,GNT,,2,Club,GNT wants home in round 2,G09-neighbours
+R036,C,5,CLU,GNT,2,Police,CLU and GNT should not both host in round 2,G09-neighbours
+R037,E,2,,,9,Broadcaster,at most one top match in round 9,
+R038,A,4,AND,,10,Club,AND wants home in round 10,G10-neighbours
+R039,A,5,ANT,,10,Club,ANT wants home in round 10,G10-neighbours
+R040,C,5,AND,ANT,10,Police,AND and ANT should not both host in round 10,G10-neighbours

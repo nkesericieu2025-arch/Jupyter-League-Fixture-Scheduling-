@@ -1,0 +1,24 @@
+{
+  "integrated": {
+    "status": "optimal / breaks: optimal",
+    "penalty": 29,
+    "breaks": 18,
+    "seconds": 0.7
+  },
+  "two_phase": {
+    "status": "optimal",
+    "penalty": 69,
+    "breaks": 18,
+    "seconds": 1.6
+  },
+  "patterns_integrated": {
+    "Club Brugge": "AHAHAHAHAHAHAH",
+    "Cercle Brugge": "HAHAHAHAHAHAHA",
+    "RSC Anderlecht": "HAHAAHAAHAHHAH",
+    "Union Saint-Gilloise": "AHAHHAHHAHAAHA",
+    "Standard Liege": "AHHAHAHHAAHAHA",
+    "KRC Genk": "HAAHAHAAHHAHAH",
+    "KAA Gent": "AHAHAAHHAHAHHA",
+    "Royal Antwerp": "HAHAHHAAHAHAAH"
+  }
+}
