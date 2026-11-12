@@ -1,0 +1,5 @@
+method,penalty,violated,violated_L1,violated_L2,breaks
+Manual (average random placement),54473,15.1,3.5,3.8,18
+Careful manual (avg of 162 placements with no L1/L2 violation),80,8.3,0,0,18
+"Template model (best of 40,320 placements)",29,4,0,0,18
+Integrated model (optimal),29,4,0,0,18

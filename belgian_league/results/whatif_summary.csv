@@ -1,0 +1,9 @@
+scenario,status,penalty_scenario_weights,penalty_base_weights,violated,L1,L2,L3,L4,L5,breaks,violated_wishes
+base,optimal / breaks: optimal,29,29,4,0,0,1,2,1,18,W09 W12 W14 W16
+hard_W14,optimal / breaks: optimal,32,32,4,0,0,1,3,0,18,W09 W12 W13 W15
+hard_W09_W10,optimal / breaks: optimal,30009,30009,5,2,0,0,2,1,18,W01-r2 W01-r8 W12 W14 W16
+clubs_level2,optimal / breaks: optimal,2000,32,4,0,0,1,3,0,18,W09 W12 W13 W15
+tv_level1,optimal / breaks: optimal,29,29,4,0,0,1,2,1,18,W09 W12 W14 W16
+equal_weights,optimal / breaks: optimal,4,15025,4,1,0,1,1,1,18,W02 W10 W14 W15
+allow_three,optimal / breaks: optimal,29,29,4,0,0,1,2,1,18,W10 W12 W14 W15
+no_break_rule,optimal / breaks: optimal,29,29,4,0,0,1,2,1,18,W10 W12 W14 W15

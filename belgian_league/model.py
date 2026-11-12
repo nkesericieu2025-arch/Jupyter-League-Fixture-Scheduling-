@@ -86,12 +86,15 @@ def build_model(data, wishes=None, weights=None, fix_h=None):
     P = data["weights"] if weights is None else weights
     top_pairs = [(i, j) for i in top for j in top if i < j]
 
+    NR = 2 * (len(T) - 1)  # number of rounds (14 for 8 teams)
+    HF = NR // 2           # rounds per half
     m = pyo.ConcreteModel()
+    m._nr = NR
     m.T = pyo.Set(initialize=T, ordered=True)
-    m.R = pyo.RangeSet(1, N_ROUNDS)
-    m.R1 = pyo.RangeSet(1, HALF)
-    m.RB = pyo.RangeSet(1, N_ROUNDS - 1)
-    m.R3 = pyo.RangeSet(1, N_ROUNDS - 2)
+    m.R = pyo.RangeSet(1, NR)
+    m.R1 = pyo.RangeSet(1, HF)
+    m.RB = pyo.RangeSet(1, NR - 1)
+    m.R3 = pyo.RangeSet(1, NR - 2)
     m.PAIRS = pyo.Set(initialize=[(i, j) for i in T for j in T if i != j], dimen=2)
     m.W = pyo.Set(initialize=range(len(W)))
 
@@ -112,7 +115,7 @@ def build_model(data, wishes=None, weights=None, fix_h=None):
         sum(m.x[i, j, r] + m.x[j, i, r] for r in m.R1) == 1)
     # (7) mirrored second half
     m.mirror = pyo.Constraint(m.PAIRS, m.R1, rule=lambda m, i, j, r:
-        m.x[i, j, r + HALF] == m.x[j, i, r])
+        m.x[i, j, r + HF] == m.x[j, i, r])
     # (8) link home status to matches
     m.home_link = pyo.Constraint(m.T, m.R, rule=lambda m, i, r:
         m.h[i, r] == sum(m.x[i, j, r] for j in T if j != i))
@@ -128,7 +131,7 @@ def build_model(data, wishes=None, weights=None, fix_h=None):
     m.brk4 = pyo.Constraint(m.T, m.RB, rule=lambda m, i, r: m.b[i, r] <= 1 - m.h[i, r] + m.h[i, r + 1])
     # (11) no break at the start or end of the season
     m.no_start_break = pyo.Constraint(m.T, rule=lambda m, i: m.b[i, 1] == 0)
-    m.no_end_break = pyo.Constraint(m.T, rule=lambda m, i: m.b[i, N_ROUNDS - 1] == 0)
+    m.no_end_break = pyo.Constraint(m.T, rule=lambda m, i: m.b[i, NR - 1] == 0)
 
     # (12) soft constraints: one per wish
     def wish_rule(m, w):
@@ -158,9 +161,11 @@ def build_model(data, wishes=None, weights=None, fix_h=None):
 
 
 # ---------------------------------------------------------------------------- solve
-def _solve(m, time_limit):
+def _solve(m, time_limit, seed=None):
     solver = pyo.SolverFactory("appsi_highs")
     solver.config.time_limit = time_limit
+    if seed is not None:  # different seeds can pick different, equally good solutions
+        solver.highs_options = {"random_seed": seed}
     res = solver.solve(m, load_solutions=False)
     status = str(res.solver.termination_condition)
     try:
@@ -171,10 +176,10 @@ def _solve(m, time_limit):
     return status, loaded
 
 
-def solve(m, time_limit=60, min_breaks=True):
+def solve(m, time_limit=60, min_breaks=True, seed=None):
     """Stage 1: minimize penalty. Stage 2 (optional): fix penalty, minimize breaks."""
     t0 = time.time()
-    s1, ok = _solve(m, time_limit)
+    s1, ok = _solve(m, time_limit, seed)
     if not ok:
         return {"status": s1, "penalty": None, "breaks": None, "seconds": round(time.time() - t0, 1)}
     best = round(pyo.value(m.penalty))
@@ -183,7 +188,7 @@ def solve(m, time_limit=60, min_breaks=True):
         m.obj.deactivate()
         m.fix_penalty = pyo.Constraint(expr=m.penalty <= best + 1e-6)
         m.obj_breaks = pyo.Objective(expr=m.breaks, sense=pyo.minimize)
-        s2, _ = _solve(m, time_limit)  # if no new solution loads, the stage-1 one stays
+        s2, _ = _solve(m, time_limit, seed)  # if no new solution loads, the stage-1 one stays
     return {
         "status": s1 if s2 is None else f"{s1} / breaks: {s2}",
         "penalty": round(pyo.value(m.penalty)),
@@ -192,16 +197,16 @@ def solve(m, time_limit=60, min_breaks=True):
     }
 
 
-def solve_two_phase(data, time_limit=60, min_breaks=True, weights=None):
+def solve_two_phase(data, time_limit=60, min_breaks=True, weights=None, seed=None):
     """Phase 1: choose home/away patterns using only wishes of type A-C.
     Phase 2: fix those patterns and choose the matches with all wishes."""
     t0 = time.time()
     h_wishes = [w for w in data["wishes"] if w["type"] in H_ONLY_TYPES]
     m1 = build_model(data, wishes=h_wishes, weights=weights)
-    r1 = solve(m1, time_limit, min_breaks)
+    r1 = solve(m1, time_limit, min_breaks, seed)
     if r1["penalty"] is None:
         return None, {"status": "phase 1 failed: " + r1["status"]}
-    fix = {(i, r): round(pyo.value(m1.h[i, r])) for i in data["teams"] for r in range(1, N_ROUNDS + 1)}
+    fix = {(i, r): round(pyo.value(m1.h[i, r])) for i in data["teams"] for r in range(1, m1._nr + 1)}
     m2 = build_model(data, weights=weights, fix_h=fix)
     r2 = solve(m2, time_limit, min_breaks=False)  # breaks are already fixed by the patterns
     r2["seconds"] = round(time.time() - t0, 1)

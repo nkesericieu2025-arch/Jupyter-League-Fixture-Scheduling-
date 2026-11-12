@@ -19,11 +19,21 @@ pip install pyomo highspy
 | `model.py` | Data loading, the MIP (constraints 5–13 of our formulation + type E), lexicographic break minimization, two-phase method, report helpers |
 | `run_usecase.py` | Solves the use case with both methods and writes `results/` |
 | `generate_random_wishes.py` | Writes one random wish file |
+| `two_phase_seeds.py` | Re-runs the two-phase method with 50 solver seeds (phase 1 has many equally good patterns) |
+| `baseline.py` | Manual baseline: places the clubs into a valid template in all 40,320 ways and compares with the optimum |
+| `whatif.py` | What-if scenarios: hard wishes, changed priorities, relaxed rules |
+| `influence.py` | Which wishes and hard rules drive the schedule, price of each violated wish, scarce resources (home/away patterns, shared stadium) |
+| `scaling.py` | Solve times for 6-18 teams, integrated vs two-phase |
 | `conflict_test.py` | Stress test: use case + n random wishes, many seeds, integrated vs two-phase |
 
 ## Run
 ```bash
 python run_usecase.py
+python baseline.py
+python whatif.py
+python two_phase_seeds.py
+python influence.py
+python scaling.py --sizes 6 8 10 12 14 16 18 --seeds 2 --time-limit 300
 python generate_random_wishes.py --n 60 --seed 1 --conflict-share 0.4
 python conflict_test.py --sizes 20 40 60 80 120 --seeds 5
 python conflict_test.py --sizes 40 80 --seeds 10 --match-share 0.7 --out results/conflict_test_match70.csv

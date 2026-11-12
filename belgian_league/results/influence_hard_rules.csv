@@ -1,0 +1,4 @@
+hard_rule_relaxed,penalty,gain,breaks,violated
+mirrored second half,25,4,12,W10 W12 W14
+max two home/away in a row,29,0,18,W09 W12 W14 W15
+no break at start/end,29,0,18,W10 W12 W14 W15

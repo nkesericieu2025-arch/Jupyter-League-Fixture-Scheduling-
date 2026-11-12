@@ -1,0 +1,22 @@
+rule,level,violated_in_optimum,influence_on_others,price_to_grant,description
+W01,1,0,20.0,,Club Brugge and Cercle Brugge share the Jan Breydel stadium so they cannot both host
+W10,3,0,20.0,,Cercle Brugge wants a home game in round 2 (club anniversary)
+W02,1,0,4.0,,Gent's stadium is booked for a concert in round 5
+W15,4,0,4.0,,Standard wants a home game on the first Liege festival weekend (round 3)
+W13,4,0,1.0,,Anderlecht wants a home game in round 6
+W03,2,0,0.0,,Brussels police cannot cover two home matches in Brussels on the same weekend
+W04,2,0,0.0,,High-risk match Club Brugge vs Anderlecht must not be in the opening round
+W05,2,0,0.0,,High-risk match Standard vs Anderlecht must not be in round 4 (city event in Liege)
+W06,2,0,0.0,,Sint-Truiden town fair: STVV cannot host in round 7
+W07,3,0,0.0,,At most one match between two top teams per round
+W08,3,0,0.0,,Sint-Truiden wants to open the season at home
+W09,3,1,0.0,0,Club Brugge wants a home game in round 2 (club anniversary)
+W11,3,0,0.0,,Club Brugge wants the final round at home
+W12,4,1,0.0,14996,Gent wants a home game in round 5
+W14,5,1,0.0,3,FC Brussels wants a home game in round 6
+W16,4,1,0.0,0,Standard wants a home game on the second Liege festival weekend (round 10)
+W17,4,0,0.0,,Genk wants the final round at home
+W18,5,0,0.0,,Genk prefers to play away in round 8 (pitch renovation)
+W19,4,0,0.0,,Cercle Brugge prefers to play away in round 12
+W20,5,0,0.0,,Sint-Truiden prefers a home game in round 9
+W21,3,0,0.0,,The Bruges derby should not be in the final round
